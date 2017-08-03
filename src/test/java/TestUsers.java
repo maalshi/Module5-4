@@ -10,8 +10,8 @@ import static io.restassured.RestAssured.given;
 
 public class TestUsers {
 
-    public static String URI = "http://jsonplaceholder.typicode.com";
-    public static String USERS = "/users";
+    public static final String URI = "http://jsonplaceholder.typicode.com";
+    public static final String USERS_PATH = "/users";
 
     @BeforeTest
     public void initTest(){
@@ -20,7 +20,7 @@ public class TestUsers {
 
     @Test
     public void checkStatusCode(){
-        Response rp = given().get(USERS).andReturn();
+        Response rp = given().get(USERS_PATH).andReturn();
         int actualStatusCode = rp.getStatusCode();
         System.out.println(actualStatusCode);
         Assert.assertEquals(actualStatusCode, 200);
@@ -28,7 +28,7 @@ public class TestUsers {
 
     @Test
     public void checkResponseHeader(){
-        Response rp = given().get(USERS).andReturn();
+        Response rp = given().get(USERS_PATH).andReturn();
         String valueOfContentTypeHeader = rp.getHeader("content-type");
         Assert.assertTrue(valueOfContentTypeHeader != null);
         Assert.assertTrue(valueOfContentTypeHeader.equals("application/json; charset=utf-8"));
@@ -36,7 +36,7 @@ public class TestUsers {
 
     @Test
     public void checkResponseBody() {
-        Response rp = given().get(USERS).andReturn();
+        Response rp = given().get(USERS_PATH).andReturn();
         Users[] users = rp.as(Users[].class);
         Assert.assertEquals(users.length, 10);
     }
