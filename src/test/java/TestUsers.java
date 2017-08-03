@@ -28,8 +28,7 @@ public class TestUsers {
         Response rp = given().get("/users").andReturn();
         String valueOfContentTypeHeader = rp.getHeader("content-type");
         Assert.assertTrue(valueOfContentTypeHeader != null);
-        Assert.assertTrue(valueOfContentTypeHeader.contains("application/json"));
-        Assert.assertTrue(valueOfContentTypeHeader.contains("charset=utf-8"));
+        Assert.assertTrue(valueOfContentTypeHeader.equals("application/json; charset=utf-8"));
     }
 
     @Test
