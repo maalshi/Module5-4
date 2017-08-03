@@ -1,0 +1,10 @@
+<!DOCTYPE suite SYSTEM "http://testng.org/testng-1.0.dtd">
+
+<suite name = "WebDervicesTest" verbose ="1" parallel="true">
+    <test name="WebDervicesTest">
+        <classes>
+            <class name="TestUsers">
+            </class>
+        </classes>
+    </test>
+</suite>
