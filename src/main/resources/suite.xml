@@ -1,7 +1,7 @@
 <!DOCTYPE suite SYSTEM "http://testng.org/testng-1.0.dtd">
 
-<suite name = "WebDervicesTest" verbose ="1" parallel="tests" thread-count="3">
-    <test name="WebDervicesTest">
+<suite name = "WebDevicesTest" verbose ="1" parallel="tests" thread-count="3">
+    <test name="StatusCodeTest">
         <classes>
             <class name="TestUsers">
                 <methods>
@@ -10,7 +10,7 @@
             </class>
         </classes>
     </test>
-    <test name="WebDervicesTest1">
+    <test name="ResponseHeaderTest">
         <classes>
             <class name="TestUsers">
                 <methods>
@@ -19,7 +19,7 @@
             </class>
         </classes>
     </test>
-    <test name="WebDervicesTest2">
+    <test name="ResponseBodyTest">
         <classes>
             <class name="TestUsers">
                 <methods>
